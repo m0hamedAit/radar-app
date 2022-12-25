@@ -1,0 +1,35 @@
+<div class="card" style="margin:100px">
+  <h3>{{owner ? owner.name + "'s Infractions" : 'Infractions'}}</h3>
+  <p-table [value]="infractions" [tableStyle]="{'min-width': '60rem'}">
+      <ng-template pTemplate="header">
+          <tr>
+              <th pSortableColumn="id" style="width:20%">Id <p-sortIcon field="id"></p-sortIcon></th>
+              <th pSortableColumn="date" style="width:20%">Date <p-sortIcon field="date"></p-sortIcon></th>
+              <th pSortableColumn="radarId" style="width:20%">Radar ID <p-sortIcon field="radarId"></p-sortIcon></th>
+              <th pSortableColumn="vehicleMatricule" style="width:20%">Vehicle Matricule <p-sortIcon field="vehicleMatricule"></p-sortIcon></th>
+              <th pSortableColumn="vehicleSpeed" style="width:20%">Vehicle Speed <p-sortIcon field="vehicleSpeed"></p-sortIcon></th>
+              <th pSortableColumn="radarSpeedLimit" style="width:20%">Speed Limit <p-sortIcon field="radarSpeedLimit"></p-sortIcon></th>
+              <th pSortableColumn="amountToPay" style="width:20%">Amount <p-sortIcon field="amountToPay"></p-sortIcon></th>
+              <th pSortableColumn="paid" style="width:20%">Paid <p-sortIcon field="paid"></p-sortIcon></th>
+              <th></th>
+          </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-infraction>
+          <tr>
+            <td>{{infraction.id}}</td>
+              <td>{{infraction.date | date:'dd-MM-yyyy HH:mm'}}</td>
+              <td>{{infraction.radarId}}</td>
+              <td>{{infraction.vehicleMatricule}}</td>
+              <td>{{infraction.vehicleSpeed}}</td>    
+              <td>{{infraction.radarSpeedLimit}}</td>
+              <td>{{infraction.amountToPay}}</td> 
+              <td>{{infraction.paid ? 'Yes' : 'No'}}</td>    
+              <td style="text-align:center">
+                <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success mr-2" (click)="editInfraction(infraction)"></button>
+                &nbsp;
+                <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning" (click)="deleteInfraction(infraction)"></button>
+            </td>
+          </tr>
+      </ng-template>
+  </p-table>
+</div>

@@ -1,0 +1,29 @@
+<div class="card" style="margin:100px">
+  <h3>Owners</h3>
+  <p-table [value]="owners" [tableStyle]="{'min-width': '60rem'}">
+      <ng-template pTemplate="header">
+          <tr>
+              <th pSortableColumn="id" style="width:20%">Id <p-sortIcon field="id"></p-sortIcon></th>
+              <th pSortableColumn="name" style="width:20%">Name <p-sortIcon field="name"></p-sortIcon></th>
+              <th pSortableColumn="birthday" style="width:20%">Birthday <p-sortIcon field="birthday"></p-sortIcon></th>
+              <th pSortableColumn="email" style="width:20%">Email <p-sortIcon field="email"></p-sortIcon></th>
+              <th pSortableColumn="phone" style="width:20%">Phone <p-sortIcon field="phone"></p-sortIcon></th>
+              <th></th>
+          </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-owner>
+          <tr>
+            <td>{{owner.id}}</td>
+              <td>{{owner.name}}</td>
+              <td>{{owner.birthDay | date:'dd-MM-yyyy'}}</td>
+              <td>{{owner.email}}</td>
+              <td>{{owner.phone}}</td>              
+              <td style="text-align:center">
+                <button pButton pRipple icon="pi pi-car" class="p-button-rounded p-button-success mr-2" (click)="showVehicle(owner)"></button>
+                &nbsp;
+                <button pButton pRipple icon="pi pi-info-circle" class="p-button-rounded p-button-warning" (click)="showInfractions(owner)"></button>
+            </td>
+          </tr>
+      </ng-template>
+  </p-table>
+</div>
