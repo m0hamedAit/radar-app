@@ -15,20 +15,6 @@ In addition to the modules representing the different microservices, the project
 ### Class Diagram
 ![](img/class_diagram.png)
 ### Radar mirco-service
-#### Structure 
-```bash
-├───radar-command
-│   │    ├───aggregates
-│   │    └───controllers
-│   │    RadarCommandApplication
-├───radar-query
-│   │   ├───controllers
-│   │   ├───entities
-│   │   ├───queries
-│   │   ├───repositories
-│   │   └───services
-│   │   RadarQueryApplication
-```
 #### Radar Commands
 ![](img/radar_create.png)
 ![](img/radar_update.png)
@@ -38,14 +24,29 @@ In addition to the modules representing the different microservices, the project
 ![](img/radar_id.png)
 
 ### Immatriculation mirco-service
-#### Structure 
-```bash
-```
-#### Immatriculation Commands
+##### Vehicles
+![](img/allVehicules.png)
+![](img/vehicle_id.png)
+
+##### Owners
+![](img/owners_all.png)
+![](img/owner_id.png)
+**Owner's vehicles**
+![](img/owner_vehicles.png)
 
 ### Infraction mirco-service
+![](img/allInfractions.png)
+![](img/infraction_id.png)
 ### Set up the technical services of the microservice architecture (Gateway, Eureka Discovery service)
+![](img/eureka.png)
+![](img/gateway.png)
 ### Angular application
+![](img/radars_web.png)
+![](img/owners_web.png)
+![](img/vehicles_web.png)
+![](img/infractions_web.png)
+![](img/owner_vehicles_web.png)
+![](img/owner_infractions_web.png)
 ### Secure your system with an OAuth2 authentication system such as Keycloak
 ### Write a docker-compose.yml script for deploying this distributed system in Docker containers
 
